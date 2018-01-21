@@ -1,0 +1,12 @@
+/* [aria-expanded="false"] > .expanded,
+[aria-expanded="true"] > .collapsed {
+  display: none;
+}
+
+ .container {
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #efefef;
+  border-radius: 25px;
+} */

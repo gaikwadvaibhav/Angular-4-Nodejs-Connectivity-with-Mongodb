@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { MyDatePickerModule } from 'mydatepicker';
+import { ViewMoreComponent } from './view-more/view-more.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewMoreComponent
   ],
   imports: [
     BrowserModule,

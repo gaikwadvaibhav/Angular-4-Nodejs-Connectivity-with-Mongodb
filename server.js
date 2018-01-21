@@ -3,19 +3,22 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
+
 // Get our API routes
 const api = require('./server/routes/api');
 
 const app = express();
 
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/firstNodeTest";
+const db = "mongodb://localhost:27017/myFirstProject";
+mongoose.Promise = global.Promise;
 
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  console.log("Database created!");
-  db.close();
+mongoose.connect(db, (err) => {
+    if (err) {
+        console.log("Error !" + err);
+    }else{
+      console.log("Good .. i got your database....")
+    }
 });
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -41,6 +44,7 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
+
 const server = http.createServer(app);
 
 /**
